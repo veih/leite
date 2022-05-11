@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+body {
+    background-image: url('./bgleite.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /*background: linear-gradient(45deg, #006bc6, #1ecafc);*/
+}
+
+.Container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container h2 {
+    position: absolute;
+    color: #006bc6;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.loader {
+    position: relative;
+    height: 300px;
+    width: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    filter: url(#Gooey);
+}
+
+.loader span {
+    left: 0;
+    transform-origin: 150px;
+    position: absolute;
+    background: #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    animation: animate 5s ease-in-out infinite;
+    animation-delay: calc(0.15s + var(--i));
+}
+
+@keyframes animate {
+    0% {
+        height: 100px;
+        width: 100px;
+        transform: rotate(0deg) translatex(120px);
+    }
+    40%, 70% {
+        height: 40px;
+        width: 40px;
+        transform: rotate(calc(360deg / 8 * var(--i)));
+        box-shadow: 0 0 0 10px #fff;
+    }
+    90%, 100% {
+        height: 100px;
+        width: 100px;
+        transform: rotate(0deg) translatex(120px);
+    }
+}
+
+svg {
+    height: 0;
+    width: 0;
+}
